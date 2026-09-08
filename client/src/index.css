@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f5f6f8;
+  --ink: #12141c;
+  --navy: #1d2444;
+  --amber: #f2a93b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: 'Fraunces', serif;
+}
+
+/* Visible keyboard focus everywhere, respecting the design rather than the browser default */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Ticket stub motif ------------------------------------------------- */
+/* A dashed perforation line with punched half-circle notches on each end,
+   used to separate an event card's image from its meta strip. */
+.ticket-perforation {
+  position: relative;
+  height: 1px;
+  border-top: 2px dashed #d7d9e0;
+  margin: 0 14px;
+}
+
+.ticket-perforation::before,
+.ticket-perforation::after {
+  content: '';
+  position: absolute;
+  top: -9px;
+  width: 18px;
+  height: 18px;
+  background: var(--paper);
+  border-radius: 50%;
+}
+
+.ticket-perforation::before {
+  left: -23px;
+}
+
+.ticket-perforation::after {
+  right: -23px;
+}
+
+/* Card shell that "punches" notches out of its own left/right edges,
+   matching the perforation line so the stub silhouette reads as one piece. */
+.ticket-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e4e6ec;
+  overflow: hidden;
+}
+
+.ticket-card::before,
+.ticket-card::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: var(--paper);
+  border: 1px solid #e4e6ec;
+  border-radius: 50%;
+  z-index: 1;
+}
