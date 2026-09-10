@@ -77,7 +77,7 @@ const Login = () => {
       </form>
 
       <p className="mt-6 text-sm text-ink/55">
-        New to Eventé?{' '}
+        New to Evento?{' '}
         <Link to="/register/role" className="font-semibold text-navy hover:text-navy-light">
           Create an account
         </Link>

@@ -71,7 +71,7 @@ const OrganizerEvents = () => {
         onConfirm={confirmDelete}
         onCancel={() => setPendingDeleteId(null)}
       >
-        This can't be undone. Anyone with the registration link will no longer see it listed on Eventé.
+        This can't be undone. Anyone with the registration link will no longer see it listed on Evento.
       </Modal>
     </div>
   );

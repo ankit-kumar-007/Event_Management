@@ -16,7 +16,7 @@ const roleOptions = [
 const RoleSelection = () => {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="font-display text-3xl font-semibold text-ink">How will you use Eventé?</h1>
+      <h1 className="font-display text-3xl font-semibold text-ink">How will you use Evento?</h1>
       <p className="mt-2 text-sm text-ink/60">You can only pick one for this account — choose what fits best.</p>
 
       <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
