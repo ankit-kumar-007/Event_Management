@@ -43,13 +43,15 @@ if (env.NODE_ENV !== 'test') {
 }
 
 // Health check
-app.get('/api/health', (req, res) => {
+app.get(['/health', '/api/health'], (req, res) => {
   res.status(200).json({ success: true, message: 'API is running' });
 });
 
-// Routes
+// Routes - support both with and without /api prefix
 app.use('/api/auth', authRoutes);
+app.use('/auth', authRoutes);
 app.use('/api/events', eventRoutes);
+app.use('/events', eventRoutes);
 
 // Error handling (must be last)
 app.use(notFound);
