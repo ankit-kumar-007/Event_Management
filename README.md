@@ -2,30 +2,6 @@
 
 Full stack is built: Express/MongoDB backend + React (Vite + Tailwind) frontend.
 
-## Setup
-
-### 1. Backend
-
-```bash
-cd server
-npm install
-cp .env.example .env   # then edit .env with real values
-npm run dev             # starts on http://localhost:5000
-```
-
-Requires a running MongoDB instance (local or Atlas) — set `MONGO_URI` in `.env`.
-
-### 2. Frontend
-
-```bash
-cd client
-npm install
-cp .env.example .env   # VITE_API_URL should point at the backend, e.g. http://localhost:5000/api
-npm run dev             # starts on http://localhost:5173
-```
-
-Run both at once (two terminals) for the full app. The Vite dev server proxies nothing special — the client just calls `VITE_API_URL` directly via axios, so make sure the backend's `CLIENT_URL` in `server/.env` matches wherever the client actually runs (CORS).
-
 ## Frontend structure
 
 - **Design**: ticket-stub motif (perforated card divider) for event cards and the booking panel; Fraunces for headlines/titles, Inter for UI, IBM Plex Mono for date/time/venue meta; each category (tech, cultural, sports, workshop, music, business) has its own accent color used consistently across chips, filters, and cards.
